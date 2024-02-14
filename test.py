@@ -16,7 +16,7 @@ df = df.drop(['X2','X3','X4','X6'], axis=1)
 #split into features and target, then split into train and test
 X = df.drop('Y', axis=1)
 y = df['Y']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 #scale the data
 scaler = StandardScaler()
